@@ -27,7 +27,17 @@ else
 System.out.println(key + " FOUND IN THE ARRAY AT POSITION "+(res+1));
 in.close();
 }
-public static int BinarySearchIterative( ) {
-// TYPE YOUR CODE HERE
+public static int BinarySearchIterative(int[] A, int data) {
+int low = 0, high = A.length-1,mid;
+while (low <= high) {
+mid = low + (high-low)/2; //To avoid overflow
+if(A[mid] == data)
+return mid;
+else if(A[mid] < data)
+low = mid + 1;		
+else high = mid - 1;
 }
+return -1;
+}
+
 }
